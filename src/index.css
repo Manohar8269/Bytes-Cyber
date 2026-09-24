@@ -1,0 +1,273 @@
+@import "tailwindcss";
+
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+
+  color: #f5f7fa;
+  background: #02070d;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #02070d;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ================================
+   CYBER GRID
+================================ */
+
+.cyber-grid {
+  background-image:
+    linear-gradient(
+      rgba(0, 245, 200, 0.045) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(0, 245, 200, 0.045) 1px,
+      transparent 1px
+    );
+
+  background-size: 50px 50px;
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.95),
+    rgba(0, 0, 0, 0.65)
+  );
+}
+
+/* ================================
+   GLOW
+================================ */
+
+.glow {
+  box-shadow:
+    0 0 20px rgba(0, 255, 200, 0.12),
+    0 0 60px rgba(0, 255, 200, 0.04);
+}
+
+.text-glow {
+  text-shadow: 0 0 25px rgba(0, 255, 200, 0.25);
+}
+
+/* ================================
+   SELECTION
+================================ */
+
+::selection {
+  background: #00f5c8;
+  color: #02070d;
+}
+
+/* ================================
+   SCROLLBAR
+================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #02070d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #123b3a;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00cfa8;
+}
+/* ================================
+   HERO EFFECTS
+================================ */
+
+.cyber-grid {
+  background-image:
+    linear-gradient(rgba(0, 245, 200, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 245, 200, 0.035) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+@media (max-width: 640px) {
+  .cyber-grid {
+    background-size: 35px 35px;
+  }
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 1px solid rgba(0, 245, 200, 0.65);
+  outline-offset: 3px;
+}
+
+::placeholder {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =========================================================
+   FINAL UI POLISH
+========================================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 1px solid rgba(0, 245, 200, 0.7);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: #00f5c8;
+  color: #02070d;
+}
+
+/* Hide horizontal scrollbar */
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #02070d;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #123b3a;
+  border-radius: 999px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #00cfa8;
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Mobile typography */
+@media (max-width: 640px) {
+  body {
+    font-size: 15px;
+  }
+
+  .cyber-grid {
+    background-size: 35px 35px;
+  }
+}
+
+.cyber-grid {
+  animation: cyberGridMove 18s linear infinite;
+}
+
+@keyframes cyberGridMove {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 25px 25px;
+  }
+
+  100% {
+    background-position: 50px 50px;
+  }
+}
