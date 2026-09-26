@@ -14,7 +14,6 @@ import {
   Globe2,
 } from "lucide-react";
 
-import CyberGrid from "../components/CyberGrid";
 import SectionLabel from "../components/SectionLabel";
 import GlowButton from "../components/GlowButton";
 import ServiceCard from "../components/ServiceCard";
@@ -111,15 +110,19 @@ function Home({ navigate }) {
               transition={{ duration: 0.7 }}
               className="relative z-10"
             >
-              <div className="mb-6 flex items-center gap-3">
-                <span className="h-px w-9 bg-[#00f5c8]" />
-
-                <span className="text-xs font-semibold uppercase tracking-[0.24em] text-[#00f5c8]">
+              <motion.div
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.45, delay: 0.12 }}
+                className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#00f5c8]/15 bg-[#00f5c8]/[0.045] px-3 py-1.5"
+              >
+                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#00f5c8] shadow-[0_0_8px_rgba(0,245,200,0.9)]" />
+                <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#00f5c8]">
                   Cybersecurity • Intelligence • Resilience
                 </span>
-              </div>
+              </motion.div>
 
-              <h1 className="max-w-4xl text-5xl font-bold leading-[1.04] tracking-[-0.03em] text-white sm:text-6xl lg:text-7xl xl:text-[80px]">
+              <h1 className="max-w-4xl text-5xl font-bold leading-[1.03] tracking-[-0.04em] text-white sm:text-6xl lg:text-7xl xl:text-[80px]">
                 Your attack surface
                 <span className="block text-[#00f5c8] text-glow">
                   is bigger
@@ -191,7 +194,7 @@ function Home({ navigate }) {
               {/* Glow */}
               <div className="absolute -inset-8 rounded-full bg-[#00f5c8]/[0.04] blur-[80px]" />
 
-              <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#061018]/90 shadow-[0_25px_100px_rgba(0,0,0,0.45)] backdrop-blur-xl">
+              <div className="glass-panel relative overflow-hidden rounded-[24px]">
 
                 {/* Window header */}
                 <div className="flex items-center justify-between border-b border-white/[0.07] px-5 py-4">
@@ -273,11 +276,14 @@ function Home({ navigate }) {
                         </linearGradient>
                       </defs>
 
-                      <path
+                      <motion.path
                         d="M0 135 C50 128 68 105 105 116 S165 150 200 97 S255 81 285 104 S335 135 365 68 S420 82 452 55 S515 85 550 45 S580 58 600 28"
                         fill="none"
                         stroke="url(#securityLine)"
                         strokeWidth="3"
+                        initial={{ pathLength: 0, opacity: 0 }}
+                        animate={{ pathLength: 1, opacity: 1 }}
+                        transition={{ duration: 1.8, delay: 0.45, ease: "easeOut" }}
                       />
                     </svg>
 
@@ -329,7 +335,7 @@ function Home({ navigate }) {
                       </span>
                     </div>
 
-                    <div className="h-1.5 overflow-hidden rounded-full bg-white/[0.06]">
+                    <div className="relative h-1.5 overflow-hidden rounded-full bg-white/[0.06]">
                       <motion.div
                         initial={{ width: 0 }}
                         animate={{ width: "78%" }}

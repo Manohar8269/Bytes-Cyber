@@ -15,7 +15,6 @@ import {
   Award,
 } from "lucide-react";
 
-import CyberGrid from "../components/CyberGrid";
 import SectionLabel from "../components/SectionLabel";
 import GlowButton from "../components/GlowButton";
 import CTA from "../components/CTA";

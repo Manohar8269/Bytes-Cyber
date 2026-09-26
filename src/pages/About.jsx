@@ -11,7 +11,6 @@ import {
   Globe2,
 } from "lucide-react";
 
-import CyberGrid from "../components/CyberGrid";
 import SectionLabel from "../components/SectionLabel";
 import GlowButton from "../components/GlowButton";
 
